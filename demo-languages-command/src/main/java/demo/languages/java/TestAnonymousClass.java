@@ -1,5 +1,13 @@
 package demo.languages.java;
 
+/**
+ * 
+ * @author tsk
+ * 匿名类是不能有名字的类，它们不能被引用，只能在创建时用New语句来声明它们。
+ * 匿名类的声明是在编译时进行的，实例化在运行时进行，这意味着for循环中的一个new语句会创建相同匿名类的几个实例，而不是创建几个不同匿名类的一个实例。
+ * 匿名类的目的是在某个地方需要特殊的实现，因此在该处编写()其实现，并获取它的实例，调用它的方法。
+ * 不要在匿名内部类编写其他的方法，是不可见的。
+ */
 public class TestAnonymousClass {
 	
 	//静态内部类
@@ -19,12 +27,28 @@ public class TestAnonymousClass {
 
 	// 在这个方法中构造了一个匿名内部类
 	private void show() {
+		/**
+		 * 匿名类实现方式1：继承一个类，重写其方法
+		 * 形式为：new <类或接口> <类的主体>
+		 */
 		Out anony = new Out() { // 获取匿名内部类实例
 			void show() { // 重写父类的方法
 				System.out.println("this is Anonymous InterClass showing.");
 			}
 		};
 		anony.show();// 调用其方法
+		
+		/**
+		 * 匿名类实现方式2：实现一个接口，可以是多个
+		 * 形式为：new <类或接口> <类的主体>
+		 */
+		Bus bus = new Bus(){
+			@Override
+			public void draw(String str) {
+				System.out.println(str+"this is bus showing");
+			}
+		};
+		bus.draw("hello");
 	}
 }
 
@@ -33,4 +57,8 @@ class Out {
 	void show() {
 		System.out.println("this is Out showing.");
 	}
+}
+
+interface Bus{
+	void draw(String str);
 }
