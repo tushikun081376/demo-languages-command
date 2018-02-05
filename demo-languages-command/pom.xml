@@ -5,4 +5,23 @@
 	<artifactId>demo-languages-command</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	
+	<!-- 1：将编译时的编码改成UTF-8 -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<java.version>1.7</java.version>
+	</properties>
+
+	<!-- 2：将编译时的JDK改成1.7 -->
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>
