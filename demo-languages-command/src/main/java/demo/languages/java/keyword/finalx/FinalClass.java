@@ -1,6 +1,7 @@
-package demo.languages.java.keyword.accesscontrol.finalx;
+package demo.languages.java.keyword.finalx;
 
 import demo.languages.java.enumx.Signal;
+import demo.languages.java.keyword.finalx.FinalFatherClass.FinalSubClass;
 
 public final class FinalClass {
 	
@@ -13,20 +14,21 @@ public final class FinalClass {
 	public static void main(String[] args) {
 		FinalClass f = new FinalClass();
 		//f.a = "2";//The final field FinalClass.a cannot be assigned
-		
-		new FinalFatherClass().ss();
 	}
 }
 
 class FinalFatherClass{
-	final void show(){
+	void show(){
 		System.out.println(1);
 	}
-	class FinalSubClass extends FinalFatherClass{
-		/*@Override
+	static class FinalSubClass extends FinalFatherClass{
 		void show(){
+			System.out.println(2);
 			//Cannot override the final method from FinalFatherClass
- 		}*/
+ 		}
+	}
+	public static void main(String[] args) {
+		new FinalSubClass().show();
 	}
 	void ss(){
 		 

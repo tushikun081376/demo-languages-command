@@ -1,4 +1,4 @@
-package demo.languages.java.keyword.accesscontrol.finalx;
+package demo.languages.java.keyword.finalx;
 
 public class FinalMethod {
 	public static void main(String[] args) {
