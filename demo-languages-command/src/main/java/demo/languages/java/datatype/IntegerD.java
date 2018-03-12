@@ -5,7 +5,8 @@ import java.util.GregorianCalendar;
 
 public class IntegerD {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) { 
+		
 		Integer a = 10;
 		Integer b = 10;
 		System.out.println(a == b); // true
