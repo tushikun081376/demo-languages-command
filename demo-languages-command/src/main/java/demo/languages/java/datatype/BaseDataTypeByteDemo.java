@@ -4,6 +4,7 @@ package demo.languages.java.datatype;
 public class BaseDataTypeByteDemo {
 
 	public static void main(String[] args) {
+		int ww = 2;
 		double a = 1.0f;
 		double b = 1.0F;
 		double c = 1.0d;
